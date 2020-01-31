@@ -1,5 +1,38 @@
 {
   "material-icon-theme.folders.associations": {
     "PowerSugar": "src",
-  }
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/__azurite_db_blob__.json": true,
+    "**/__azurite_db_queue__.json": true,
+    "**/__azurite_db_queue_extent__.json": true,
+    "**/__blobstorage__": true,
+    "**/__pycache__": true,
+    "**/__queuestorage__": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.idea": true,
+    "**/.ipynb_checkpoints": true,
+    "**/.mypy_cache": true,
+    "**/.project": true,
+    "**/.pytest_cache": true,
+    "**/.settings": true,
+    "**/.venv": true,
+    "**/.vs": true,
+    "**/.vscode": true,
+    "**/.vscode/solution-explorer": true,
+    "**/*.code-workspace": true,
+    "**/*.egg-info": true,
+    "**/bin": true,
+    "**/obj": true,
+    "**/out": false,
+    "**/sqltools*.log": true,
+    "**/target": true
+  },
+  "explorerExclude.backup": null
 }

@@ -4,46 +4,87 @@
     GUID = '7243db9b-c472-4fea-8483-b85681426f7a'
 
     Author = 'Travis C. LaGrone'
-    Copyright = '2020 (c) Travis C. LaGrone. All rights reserved.'  # TODO
-    Description = 'PowerShell "sugar", e.g. concisely aliased proxy functions for common command parameterizations. Intended for use in interactive sessions.'  # TODO
+    Copyright = '2020 (c) Travis C. LaGrone. All rights reserved.'
+    Description = 'PowerShell "sugar", e.g. concisely aliased proxy functions for common command parameterizations. Intended for use in interactive sessions.'
 
     CompatiblePSEditions = 'Core'
     PowerShellVersion = '6.2'
 
-    RequiredModules = @()  # TODO
-    RequiredAssemblies = @()  # TODO
+    RequiredModules = @()
+    RequiredAssemblies = @()
 
-    ScriptsToProcess = @()  # TODO
-    TypesToProcess = @()  # TODO
-    FormatsToProcess = @()  # TODO
+    TypesToProcess = @()
+    FormatsToProcess = @()
+    ScriptsToProcess = @()
 
-    NestedModules = @()  # TODO
+    NestedModules = @()
 
-    FunctionsToExport = @()  # TODO
-    CmdletsToExport = @()  # TODO
-    VariablesToExport = @()  # TODO
-    AliasesToExport = @()  # TODO
-    DscResourcesToExport = @()  # TODO
+    FunctionsToExport = @(
+        'Get-Noun'
+        'Measure-Object_All'
+        'Measure-Object_AllStats'
+        'Measure-Object_Any'
+        'Measure-Object_Average'
+        'Measure-Object_Character'
+        'Measure-Object_Count'
+        'Measure-Object_Line'
+        'Measure-Object_Maximum'
+        'Measure-Object_Minimum'
+        'Measure-Object_StandardDeviation'
+        'Measure-Object_Sum'
+        'Measure-Object_Word'
+        'Select-Object_First'
+        'Select-Object_Index'
+        'Select-Object_Last'
+        'Select-Object_Skip'
+        'Select-Object_SkipIndex'
+        'Select-Object_SkipLast'
+        'Where-PSItem'
+    )
+    AliasesToExport = @(
+        'all'
+        'stats'
+        'any'
+        'avg'
+        'chars'
+        'count'
+        'lines'
+        'max'
+        'min'
+        'stddev'
+        'sum'
+        'words'
+        'first'
+        'index'
+        'last'
+        'skip'
+        'skipindex'
+        'skiplast'
+        '?_'
+    )
+    CmdletsToExport = @()
+    VariablesToExport = @()
+    DscResourcesToExport = @()
 
-    ModuleList = @('PowerSugar')
-    FileList = @()  # TODO
+    ModuleList = @()
+    FileList = @()
 
     PrivateData = @{
 
         PSData = @{
 
-            Tags = @()  # TODO
+            Tags = @('core', 'sugar', 'noun', 'object', 'psitem', 'wrapper', 'proxy', 'alias')
 
-            LicenseUri = 'https://raw.githubusercontent.com/travis-c-lagrone/PowerSugar/master/LICENSE'
+            LicenseUri = 'https://raw.githubusercontent.com/travis-c-lagrone/PowerSugar/master/LICENSE.txt'
             ProjectUri = 'https://github.com/travis-c-lagrone/PowerSugar'
             # IconUri = ''
 
-            # ReleaseNotes = ''  # TODO
-            # Prerelease = ''  # TODO
+            # ReleaseNotes = ''  # TODO write release notes
+            Prerelease = '20200131T161940Z'  # TODO update prerelease timestamp
 
-            RequireLicenseAcceptance = $true
+            RequireLicenseAcceptance = $false
 
-            # ExternalModuleDependencies = @()
+            ExternalModuleDependencies = @()
         }
     }
 

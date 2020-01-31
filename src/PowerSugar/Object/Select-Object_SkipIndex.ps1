@@ -52,5 +52,3 @@ function Select-Object_SkipIndex {
 }
 
 Set-Alias -Name 'skipindex' -Value 'Select-Object_SkipIndex' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Select-Object_SkipIndex' -Alias 'skipindex'

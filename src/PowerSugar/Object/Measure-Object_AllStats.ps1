@@ -64,5 +64,3 @@ function Measure-Object_AllStats {
 }
 
 Set-Alias -Name 'stats' -Value 'Measure-Object_AllStats' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_AllStats' -Alias 'stats'

@@ -409,5 +409,3 @@ function Where-PSItem {
 }
 
 Set-Alias -Name '?_' -Value 'Where-PSItem' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Where-PSItem' -Alias '?_'

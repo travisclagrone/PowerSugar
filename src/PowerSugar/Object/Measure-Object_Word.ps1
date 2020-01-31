@@ -75,5 +75,3 @@ function Measure-Object_Word {
 }
 
 Set-Alias -Name 'words' -Value 'Measure-Object_Word' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Word' -Alias 'words'

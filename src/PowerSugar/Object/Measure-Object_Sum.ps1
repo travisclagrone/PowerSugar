@@ -60,5 +60,3 @@ function Measure-Object_Sum {
 }
 
 Set-Alias -Name 'sum' -Value 'Measure-Object_Sum' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Sum' -Alias 'sum'

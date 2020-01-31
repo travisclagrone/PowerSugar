@@ -53,5 +53,3 @@ function Select-Object_Skip {
 }
 
 Set-Alias -Name 'skip' -Value 'Select-Object_Skip' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Select-Object_Skip' -Alias 'skip'

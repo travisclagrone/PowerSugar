@@ -64,5 +64,3 @@ function Measure-Object_Maximum {
 }
 
 Set-Alias -Name 'max' -Value 'Measure-Object_Maximum' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Maximum' -Alias 'max'

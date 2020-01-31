@@ -60,5 +60,3 @@ function Measure-Object_Count {
 }
 
 Set-Alias -Name 'count' -Value 'Measure-Object_Count' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Count' -Alias 'count'

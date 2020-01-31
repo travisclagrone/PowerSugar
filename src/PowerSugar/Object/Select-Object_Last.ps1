@@ -53,5 +53,3 @@ function Select-Object_Last {
 }
 
 Set-Alias -Name 'last' -Value 'Select-Object_Last' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Select-Object_Last' -Alias 'last'

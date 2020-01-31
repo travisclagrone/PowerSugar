@@ -10,5 +10,3 @@ function Measure-Object_Any {
 }
 
 Set-Alias -Name 'any' -Value 'Measure-Object_Any' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Any' -Alias 'any'

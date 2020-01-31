@@ -52,5 +52,3 @@ function Select-Object_Index {
 }
 
 Set-Alias -Name 'index' -Value 'Select-Object_Index' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Select-Object_Index' -Alias 'index'

@@ -64,5 +64,3 @@ function Measure-Object_Average {
 }
 
 Set-Alias -Name 'avg' -Value 'Measure-Object_Average' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Average' -Alias 'avg'

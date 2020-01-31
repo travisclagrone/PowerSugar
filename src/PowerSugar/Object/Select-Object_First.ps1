@@ -47,5 +47,3 @@ function Select-Object_First {
 }
 
 Set-Alias -Name 'first' -Value 'Select-Object_First' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Select-Object_First' -Alias 'first'

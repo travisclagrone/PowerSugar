@@ -10,5 +10,3 @@ function Measure-Object_All {
 }
 
 Set-Alias -Name 'all' -Value 'Measure-Object_All' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_All' -Alias 'all'

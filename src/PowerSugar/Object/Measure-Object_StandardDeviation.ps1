@@ -60,5 +60,3 @@ function Measure-Object_StandardDeviation {
 }
 
 Set-Alias -Name 'stddev' -Value 'Measure-Object_StandardDeviation' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_StandardDeviation' -Alias 'stddev'

@@ -75,5 +75,3 @@ function Measure-Object_Character {
 }
 
 Set-Alias -Name 'chars' -Value 'Measure-Object_Character' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Character' -Alias 'chars'

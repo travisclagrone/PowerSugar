@@ -64,5 +64,3 @@ function Measure-Object_Minimum {
 }
 
 Set-Alias -Name 'min' -Value 'Measure-Object_Minimum' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Minimum' -Alias 'min'

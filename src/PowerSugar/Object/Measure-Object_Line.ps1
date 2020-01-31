@@ -68,5 +68,3 @@ function Measure-Object_Line {
 }
 
 Set-Alias -Name 'lines' -Value 'Measure-Object_Line' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Measure-Object_Line' -Alias 'lines'

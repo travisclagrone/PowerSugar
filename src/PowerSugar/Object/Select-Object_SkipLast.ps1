@@ -55,5 +55,3 @@ function Select-Object_SkipLast {
 }
 
 Set-Alias -Name 'skiplast' -Value 'Select-Object_SkipLast' -ErrorAction SilentlyContinue
-
-Export-ModuleMember -Function 'Select-Object_SkipLast' -Alias 'skiplast'

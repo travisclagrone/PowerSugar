@@ -80,7 +80,7 @@
             # IconUri = ''
 
             # ReleaseNotes = ''  # TODO write release notes
-            Prerelease = '20200131T161940Z'  # TODO update prerelease timestamp
+            # Prerelease = ''  # TODO update prerelease timestamp
 
             RequireLicenseAcceptance = $false
 

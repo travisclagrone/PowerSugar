@@ -1,6 +1,4 @@
 $sources = @(
-    'Noun/Get-Noun.ps1'
-    'Noun/NounInfo.ps1'
     'Object/Measure-Object_All.ps1'
     'Object/Measure-Object_AllStats.ps1'
     'Object/Measure-Object_Any.ps1'

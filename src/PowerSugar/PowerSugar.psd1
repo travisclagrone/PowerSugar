@@ -20,7 +20,6 @@
     NestedModules = @()
 
     FunctionsToExport = @(
-        'Get-Noun'
         'Measure-Object_All'
         'Measure-Object_AllStats'
         'Measure-Object_Any'
@@ -73,7 +72,7 @@
 
         PSData = @{
 
-            Tags = @('core', 'sugar', 'noun', 'object', 'psitem', 'wrapper', 'proxy', 'alias')
+            Tags = @('core', 'sugar', 'object', 'psitem', 'wrapper', 'proxy', 'alias')
 
             LicenseUri = 'https://raw.githubusercontent.com/travis-c-lagrone/PowerSugar/master/LICENSE.txt'
             ProjectUri = 'https://github.com/travis-c-lagrone/PowerSugar'

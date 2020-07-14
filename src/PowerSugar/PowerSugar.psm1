@@ -1,6 +1,6 @@
 $sources = @(
     'FileDate/Get-FileDateUniversal.ps1'
-    'FileDate/GetFileDateTimeUniversal.ps1'
+    'FileDate/Get-FileDateTimeUniversal.ps1'
     'Object/Measure-Object_All.ps1'
     'Object/Measure-Object_AllStats.ps1'
     'Object/Measure-Object_Any.ps1'

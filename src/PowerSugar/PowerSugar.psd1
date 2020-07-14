@@ -20,6 +20,8 @@
     NestedModules = @()
 
     FunctionsToExport = @(
+        'Get-FileDateTimeUniversal'
+        'Get-FileDateUniversal'
         'Measure-Object_All'
         'Measure-Object_AllStats'
         'Measure-Object_Any'
@@ -41,6 +43,8 @@
         'Where-PSItem'
     )
     AliasesToExport = @(
+        'now'
+        'today'
         'all'
         'stats'
         'any'
@@ -72,7 +76,7 @@
 
         PSData = @{
 
-            Tags = @('core', 'sugar', 'object', 'psitem', 'wrapper', 'proxy', 'alias')
+            Tags = @('core', 'sugar', 'object', 'psitem', 'wrapper', 'proxy', 'alias', 'filedate')
 
             LicenseUri = 'https://raw.githubusercontent.com/travis-c-lagrone/PowerSugar/master/LICENSE.txt'
             ProjectUri = 'https://github.com/travis-c-lagrone/PowerSugar'

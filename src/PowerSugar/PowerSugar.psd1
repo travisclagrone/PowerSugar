@@ -1,6 +1,6 @@
 @{
     RootModule = 'PowerSugar.psm1'
-    ModuleVersion = '0.0.1'
+    ModuleVersion = '0.0.2'
     GUID = '7243db9b-c472-4fea-8483-b85681426f7a'
 
     Author = 'Travis C. LaGrone'
@@ -8,7 +8,7 @@
     Description = 'PowerShell "sugar", e.g. concisely aliased proxy functions for common command parameterizations. Intended for use in interactive sessions.'
 
     CompatiblePSEditions = 'Core'
-    PowerShellVersion = '6.2'
+    PowerShellVersion = '7.0'
 
     RequiredModules = @()
     RequiredAssemblies = @()

@@ -8,5 +8,4 @@ Publish-Module `
     -Path $(Join-Path $RepoRoot 'src' 'PowerSugar') `
     -NuGetApiKey $(ConvertFrom-SecureString -AsPlainText $(
         Import-CliXml -LiteralPath $(Join-Path $Env:HOME '.keys' 'powershellgallery' "$Env:COMPUTERNAME.clixml")
-    )) `
-    -Verbose
+    ))

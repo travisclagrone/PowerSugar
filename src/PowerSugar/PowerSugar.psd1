@@ -1,6 +1,6 @@
 @{
     RootModule = 'PowerSugar.psm1'
-    ModuleVersion = '0.0.2'
+    ModuleVersion = '0.0.3'
     GUID = '7243db9b-c472-4fea-8483-b85681426f7a'
 
     Author = 'Travis C. LaGrone'

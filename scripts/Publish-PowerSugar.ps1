@@ -7,6 +7,6 @@ param(
 Publish-Module `
     -Path $(Join-Path $RepoRoot 'src' 'PowerSugar') `
     -NuGetApiKey $(ConvertFrom-SecureString -AsPlainText $(
-        Get-Content -Raw (Join-Path $Env:HOME '.keys' 'powershellgallery' $Env:COMPUTERNAME)
+        Import-CliXml -LiteralPath $(Join-Path $Env:HOME '.keys' 'powershellgallery' "$Env:COMPUTERNAME.clixml")
     )) `
     -Verbose

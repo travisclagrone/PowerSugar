@@ -32,7 +32,8 @@
     "**/obj": true,
     "**/out": false,
     "**/sqltools*.log": true,
-    "**/target": true
+    "**/target": true,
+    ".metals": true
   },
   "explorerExclude.backup": null,
   "files.watcherExclude": {

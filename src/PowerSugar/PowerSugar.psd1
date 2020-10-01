@@ -1,6 +1,6 @@
 @{
     RootModule = 'PowerSugar.psm1'
-    ModuleVersion = '0.0.3'
+    ModuleVersion = '0.0.4'
     GUID = '7243db9b-c472-4fea-8483-b85681426f7a'
 
     Author = 'Travis C. LaGrone'
@@ -78,7 +78,7 @@
 
         PSData = @{
 
-            Tags = @('core', 'sugar', 'object', 'psitem', 'wrapper', 'proxy', 'alias', 'filedate')
+            Tags = @('core', 'sugar', 'object', 'psitem', 'wrapper', 'proxy', 'alias', 'filedate', 'timespan')
 
             LicenseUri = 'https://raw.githubusercontent.com/travis-c-lagrone/PowerSugar/master/LICENSE.txt'
             ProjectUri = 'https://github.com/travis-c-lagrone/PowerSugar'

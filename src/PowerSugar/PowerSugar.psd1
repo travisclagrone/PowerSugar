@@ -13,7 +13,9 @@
     RequiredModules = @()
     RequiredAssemblies = @()
 
-    TypesToProcess = @()
+    TypesToProcess = @(
+        './TimeSpan/TimeSpan.Types.ps1xml'
+    )
     FormatsToProcess = @()
     ScriptsToProcess = @()
 

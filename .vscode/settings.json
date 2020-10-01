@@ -34,5 +34,8 @@
     "**/sqltools*.log": true,
     "**/target": true
   },
-  "explorerExclude.backup": null
+  "explorerExclude.backup": null,
+  "files.watcherExclude": {
+    "**/target": true
+  }
 }

@@ -69,14 +69,14 @@ TypesToProcess = './TimeSpan/TimeSpan.Types.ps1xml'
 NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-FileDateTimeUniversal', 'Get-FileDateUniversal', 
-               'Measure-Object_All', 'Measure-Object_AllStats', 'Measure-Object_Any', 
-               'Measure-Object_Average', 'Measure-Object_Character', 
-               'Measure-Object_Count', 'Measure-Object_Line', 
-               'Measure-Object_Maximum', 'Measure-Object_Minimum', 
-               'Measure-Object_StandardDeviation', 'Measure-Object_Sum', 
-               'Measure-Object_Word', 'Select-Object_First', 'Select-Object_Index', 
-               'Select-Object_Last', 'Select-Object_Skip', 'Select-Object_SkipIndex', 
+FunctionsToExport = 'Get-FileDateTimeUniversal', 'Get-FileDateUniversal',
+               'Measure-Object_All', 'Measure-Object_AllStats', 'Measure-Object_Any',
+               'Measure-Object_Average', 'Measure-Object_Character',
+               'Measure-Object_Count', 'Measure-Object_Line',
+               'Measure-Object_Maximum', 'Measure-Object_Minimum',
+               'Measure-Object_StandardDeviation', 'Measure-Object_Sum',
+               'Measure-Object_Word', 'Select-Object_First', 'Select-Object_Index',
+               'Select-Object_Last', 'Select-Object_Skip', 'Select-Object_SkipIndex',
                'Select-Object_SkipLast', 'Where-PSItem'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -86,8 +86,8 @@ CmdletsToExport = @()
 # VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = 'now', 'today', 'all', 'stats', 'any', 'avg', 'chars', 'count', 'lines', 'max', 'min', 
-               'stddev', 'sum', 'words', 'first', 'index', 'last', 'skip', 'skipindex', 
+AliasesToExport = 'now', 'today', 'all', 'stats', 'any', 'avg', 'chars', 'count', 'lines', 'max', 'min',
+               'stddev', 'sum', 'words', 'first', 'index', 'last', 'skip', 'skipindex',
                'skiplast'
 
 # DSC resources to export from this module
@@ -139,4 +139,3 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
-

@@ -12,13 +12,21 @@ param(
 
     [string] $PrereleaseLabel = (property PrereleaseLabel ''),
 
-    [string] $BuildLabel = (property BuildLabel (Get-Date -Format 'FileDateTimeUniversal'))
+    [string] $BuildLabel = (property BuildLabel (Get-Date -Format 'FileDateTimeUniversal')),
+
+    [SupportsWildcards()]
+    [PSDefaultValue(Help='All automatically created/generated module manifests.')]
+    [ValidateNotNull()]
+    [AllowEmptyCollection()]
+    [string[]] $NormalizeNewlinePath
 )
 
 
 $ModuleName = 'PowerSugar'
 $ModuleRoot = Join-Path $BuildRoot 'src' $ModuleName
 $ModuleManifest = Join-Path $ModuleRoot "$ModuleName.psd1"
+
+$NormalizeNewlinePath = $NormalizeNewlinePath ? (Convert-Path $NormalizeNewlinePath | Test-Path -PathType Leaf) : $ModuleManifest
 
 
 function Import-ModuleManifest ([string] $Path = $script:ModuleManifest) { Import-PowerShellDataFile -LiteralPath $Path }
@@ -65,7 +73,17 @@ task Version {
     Update-ModuleManifest -Path $ModuleManifest -ModuleVersion $new
 }
 
-task Build Version
+task NormalizeNewlines {
+    foreach ($file in $script:NormalizeNewlinePath) {
+        $txt = Get-Content -Raw $file
+        if ($txt.Contains("`r")) {
+            $txt = $txt.Replace("`r`n", "`n").Replace("`r", '')
+            Set-Content $file $txt -Encoding UTF8
+        }
+    }
+}
+
+task Build Version, NormalizeNewlines
 
 task Publish Build, {
     Publish-Module -Path $script:ModuleRoot -NuGetApiKey $script:NuGetApiKey

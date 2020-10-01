@@ -1,4 +1,4 @@
-#Requires -Version 7.1
+#Requires -Version 7.0.3
 
 # Build Parameters
 param(
@@ -7,17 +7,17 @@ param(
             Import-CliXml -LiteralPath (Join-Path $HOME '.keys' 'powershellgallery' "$((Get-ComputerInfo).CsName).clixml"))
     )),
 
-    [ValidateSet('Major', 'Minor', 'Patch', $null)]
-    [string] $BumpVersion = (property BumpVersion $null),
+    [ValidateSet('Major', 'Minor', 'Patch', '')]
+    [string] $BumpVersion = (property BumpVersion ''),
 
-    [string] $PrereleaseLabel = (property PrereleaseLabel $null),
+    [string] $PrereleaseLabel = (property PrereleaseLabel ''),
 
     [string] $BuildLabel = (property BuildLabel (Get-Date -Format 'FileDateTimeUniversal'))
 )
 
 
 $ModuleName = 'PowerSugar'
-$ModuleRoot = Join-Path $RepoRoot 'src' $ModuleName
+$ModuleRoot = Join-Path $BuildRoot 'src' $ModuleName
 $ModuleManifest = Join-Path $ModuleRoot "$ModuleName.psd1"
 
 

@@ -2,8 +2,7 @@
 
 # Build Parameters
 param(
-    [string] $NuGetApiKey = (property NuGetApiKey $(Get-Secret -Name 'NuGetApiKey' | ConvertFrom-SecureString -AsPlainText)),
-
+    [Parameter(HelpMessage = 'Major, Minor, Patch, or nothing (defaults to applying current timestamp as build specifier)')]
     [ValidateSet('Major', 'Minor', 'Patch', '')]
     [string] $BumpVersion = (property BumpVersion ''),
 
@@ -12,10 +11,12 @@ param(
     [string] $BuildLabel = (property BuildLabel (Get-Date -Format 'FileDateTimeUniversal')),
 
     [SupportsWildcards()]
-    [PSDefaultValue(Help='All automatically created/generated module manifests.')]
+    [PSDefaultValue(Help = 'All automatically created/generated module manifests.')]
     [ValidateNotNull()]
     [AllowEmptyCollection()]
-    [string[]] $NormalizeNewlinePath
+    [string[]] $NormalizeNewlinePath,
+
+    [string] $NuGetApiKey = (property NuGetApiKey $('WhatIf' ? $WhatIf : (Get-Secret -Name 'NuGetApiKey' | ConvertFrom-SecureString -AsPlainText)))
 )
 
 

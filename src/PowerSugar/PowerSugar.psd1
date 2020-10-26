@@ -69,7 +69,7 @@ TypesToProcess = './TimeSpan/TimeSpan.Types.ps1xml'
 NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-Now', 'Get-Today',
+FunctionsToExport = 'Get-Now', 'Get-Timestamp', 'Get-Today',
                'Measure-Object_All', 'Measure-Object_AllStats', 'Measure-Object_Any',
                'Measure-Object_Average', 'Measure-Object_Character',
                'Measure-Object_Count', 'Measure-Object_Line',
@@ -86,7 +86,7 @@ CmdletsToExport = @()
 # VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = 'now', 'today', 'all', 'stats', 'any', 'avg', 'chars', 'count', 'lines', 'max', 'min',
+AliasesToExport = 'now', 'timestamp', 'today', 'all', 'stats', 'any', 'avg', 'chars', 'count', 'lines', 'max', 'min',
                'stddev', 'sum', 'words', 'first', 'index', 'last', 'skip', 'skipindex',
                'skiplast'
 

@@ -19,6 +19,7 @@ param(
     [string] $NuGetApiKey = (property NuGetApiKey $('WhatIf' ? $WhatIf : (Get-Secret -Name 'NuGetApiKey' | ConvertFrom-SecureString -AsPlainText)))
 )
 
+#region Variables
 
 $ModuleName = 'PowerSugar'
 $ModuleRoot = Join-Path $BuildRoot 'src' $ModuleName
@@ -26,11 +27,17 @@ $ModuleManifest = Join-Path $ModuleRoot "$ModuleName.psd1"
 
 $NormalizeNewlinePath = $NormalizeNewlinePath ? (Convert-Path $NormalizeNewlinePath | Test-Path -PathType Leaf) : $ModuleManifest
 
+#endregion
+
+#region Functions
 
 function Import-ModuleManifest ([string] $Path = $script:ModuleManifest) { Import-PowerShellDataFile -LiteralPath $Path }
 
 function coalesce { @($input) + $args | Where-Object { $_ } | Select-Object -First 1 }
 
+#endregion
+
+#region Tasks
 
 task Version {
     $old = ((Import-ModuleManifest)['ModuleVersion'] -as [semver]) ?? [semver]::new(0)
@@ -86,3 +93,5 @@ task Build Version, NormalizeNewlines
 task Publish Build, {
     Publish-Module -Path $script:ModuleRoot -NuGetApiKey $script:NuGetApiKey
 }
+
+#endregion

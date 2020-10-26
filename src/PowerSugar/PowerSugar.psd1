@@ -69,7 +69,7 @@ TypesToProcess = './TimeSpan/TimeSpan.Types.ps1xml'
 NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-FileDateTimeUniversal', 'Get-FileDateUniversal',
+FunctionsToExport = 'Format-Now', 'Format-Today', 'Get-Now', 'Get-Today',
                'Measure-Object_All', 'Measure-Object_AllStats', 'Measure-Object_Any',
                'Measure-Object_Average', 'Measure-Object_Character',
                'Measure-Object_Count', 'Measure-Object_Line',
@@ -86,7 +86,7 @@ CmdletsToExport = @()
 # VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = 'now', 'today', 'all', 'stats', 'any', 'avg', 'chars', 'count', 'lines', 'max', 'min',
+AliasesToExport = 'fnow', 'ftoday', 'now', 'today', 'all', 'stats', 'any', 'avg', 'chars', 'count', 'lines', 'max', 'min',
                'stddev', 'sum', 'words', 'first', 'index', 'last', 'skip', 'skipindex',
                'skiplast'
 
@@ -105,7 +105,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'core','sugar','object','psitem','wrapper','proxy','alias','filedate','timespan'
+        Tags = 'core','sugar','object','psitem','wrapper','proxy','alias','datetime','timespan'
 
         # A URL to the license for this module.
         LicenseUri = 'https://raw.githubusercontent.com/travis-c-lagrone/PowerSugar/master/LICENSE.txt'

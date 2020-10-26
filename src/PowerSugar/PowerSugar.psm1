@@ -1,6 +1,8 @@
 $sources = @(
-    'FileDate/Get-FileDateUniversal.ps1'
-    'FileDate/Get-FileDateTimeUniversal.ps1'
+    'DateTime/Format-Now.ps1'
+    'DateTime/Format-Today.ps1'
+    'DateTime/Get-Now.ps1'
+    'DateTime/Get-Today.ps1'
     'Object/Measure-Object_All.ps1'
     'Object/Measure-Object_AllStats.ps1'
     'Object/Measure-Object_Any.ps1'

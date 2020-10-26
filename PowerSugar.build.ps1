@@ -2,10 +2,7 @@
 
 # Build Parameters
 param(
-    [string] $NuGetApiKey = (property NuGetApiKey $(
-        ConvertFrom-SecureString -AsPlainText $(
-            Import-CliXml -LiteralPath (Join-Path $HOME '.keys' 'powershellgallery' "$((Get-ComputerInfo).CsName).clixml"))
-    )),
+    [string] $NuGetApiKey = (property NuGetApiKey $(Get-Secret -Name 'NuGetApiKey' | ConvertFrom-SecureString -AsPlainText)),
 
     [ValidateSet('Major', 'Minor', 'Patch', '')]
     [string] $BumpVersion = (property BumpVersion ''),

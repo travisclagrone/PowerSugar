@@ -16,7 +16,7 @@ param(
     [AllowEmptyCollection()]
     [string[]] $NormalizeNewlinePath,
 
-    [string] $NuGetApiKey = (property NuGetApiKey $('WhatIf' ? $WhatIf : (Get-Secret -Name 'NuGetApiKey' | ConvertFrom-SecureString -AsPlainText)))
+    [string] $NuGetApiKey = (property NuGetApiKey)
 )
 
 #region Variables

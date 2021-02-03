@@ -60,7 +60,6 @@
         'Get-Today'
 
         # Member/
-        'Get-Member'
         'Get-MemberType'
 
         # Object/
@@ -132,7 +131,6 @@
         'DateTime/Get-Timestamp.ps1'
         'DateTime/Get-Today.ps1'
 
-        'Member/Get-Member.ps1'
         'Member/Get-MemberType.ps1'
 
         'Object/Measure-Object_All.ps1'

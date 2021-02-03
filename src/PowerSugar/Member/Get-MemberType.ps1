@@ -1,22 +1,18 @@
 function Get-MemberType {
-    <#
-        .ForwardHelpTargetName Microsoft.PowerShell.Utility\Get-Member
-        .ForwardHelpCategory Cmdlet
-    #>
     [Alias('gmt')]
-    [CmdletBinding(DefaultParameterSetName='Standalone', HelpUri='https://go.microsoft.com/fwlink/?LinkID=2096704', RemotingCapability='None')]
+    [CmdletBinding(PositionalBinding=$false)]
     param(
-        [Parameter(ParameterSetName='Standalone', Position=0)]
-        [Parameter(ParameterSetName='Pipeline', ValueFromPipeline=$true, Mandatory)]
+        [Parameter(ValueFromPipeline=$true)]
         [psobject]
         ${InputObject},
 
-        [Parameter(ParameterSetName='Standalone', Position=1)]
-        [Parameter(ParameterSetName='Pipeline', Position=0)]
+        [Parameter(Position=0)]
         [Alias('Type')]
         [System.Management.Automation.PSMemberTypes]
         ${MemberType},
 
+        [ValidateNotNullOrEmpty()]
+        [SupportsWildcards()]
         [ValidateNotNullOrEmpty()]
         [string[]]
         ${Name},

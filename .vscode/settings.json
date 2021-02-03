@@ -1,7 +1,6 @@
 {
-  "material-icon-theme.folders.associations": {
-    "PowerSugar": "src",
-  },
+  "powershell.cwd": "${workspaceFolder}",
+
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -35,8 +34,10 @@
     "**/target": true,
     ".metals": true
   },
-  "explorerExclude.backup": null,
   "files.watcherExclude": {
     "**/target": true
-  }
+  },
+  "material-icon-theme.folders.associations": {
+    "PowerSugar": "src",
+  },
 }

@@ -2,6 +2,8 @@ $sources = @(
     'DateTime/Get-Now.ps1'
     'DateTime/Get-Timestamp.ps1'
     'DateTime/Get-Today.ps1'
+    'Member/Get-Member.ps1'
+    'Member/Get-MemberType.ps1'
     'Object/Measure-Object_All.ps1'
     'Object/Measure-Object_AllStats.ps1'
     'Object/Measure-Object_Any.ps1'

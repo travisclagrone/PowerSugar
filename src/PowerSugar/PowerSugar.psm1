@@ -24,6 +24,8 @@ $sources = @(
     'Object/Select-Object_SkipIndex.ps1'
     'Object/Select-Object_SkipLast.ps1'
 
+    'PSDrive/Get-FileSystem.ps1'
+
     'PSItem/Where-PSItem.ps1'
 )
 

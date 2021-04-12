@@ -60,7 +60,7 @@ PowerShellVersion = '7.1'
 # ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
-TypesToProcess = 'TimeSpan/TimeSpan._types.ps1xml'
+TypesToProcess = 'TimeSpan/TimeSpan.types.ps1xml'
 
 # Format files (.ps1xml) to be loaded when importing this module
 # FormatsToProcess = @()

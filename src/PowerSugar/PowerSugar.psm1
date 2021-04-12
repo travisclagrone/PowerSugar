@@ -3,6 +3,8 @@ $sources = @(
     'DateTime/Get-Timestamp.ps1'
     'DateTime/Get-Today.ps1'
 
+    'Help/Get-HelpFile.ps1'
+
     'Member/Get-MemberType.ps1'
 
     'Object/Measure-Object_All.ps1'

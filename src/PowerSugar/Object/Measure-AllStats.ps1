@@ -1,4 +1,4 @@
-function Measure-Object_AllStats {
+function Measure-AllStats {
     <#
     .Synopsis
         Measures common statistics of the input objects.
@@ -20,7 +20,7 @@ function Measure-Object_AllStats {
 
     .Inputs
         System.Management.Automation.PSObject
-            You can pipe objects to `Measure-Object_AllStats`.
+            You can pipe objects to `Measure-AllStats`.
 
     .Outputs
         Microsoft.PowerShell.Commands.GenericMeasureInfo
@@ -63,4 +63,4 @@ function Measure-Object_AllStats {
     }
 }
 
-Set-Alias -Name 'stats' -Value 'Measure-Object_AllStats' -ErrorAction SilentlyContinue
+Set-Alias -Name 'stats' -Value 'Measure-AllStats' -ErrorAction SilentlyContinue

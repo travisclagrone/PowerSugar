@@ -1,3 +1,5 @@
+using namespace System.Diagnostics.CodeAnalysis
+
 function Where-PSItem {
     <#
     .SYNOPSIS
@@ -164,17 +166,18 @@ function Where-PSItem {
     .LINK
         Where-Object
     #>
+    [Alias('?_')]
     [CmdletBinding(PositionalBinding=$false, DefaultParameterSetName='bool', RemotingCapability='None')]
+    [SuppressMessage('PSUseApprovedVerbs', '', Justification = 'Used for syntactic sugar only in interactive sessions.')]
     param(
         # The input object to filter.
         [Parameter(ValueFromPipeline)]
         [PSObject]
         $InputObject,
 
-        # Indicates that this command passes through input objects that are falsey.
+        # Indicates that this command passes through input objects that are falsy.
         [Parameter(ParameterSetName='Not', Mandatory)]
         [switch]
-        [ValidateSet($true)]
         $Not,
 
         # The value against which to compare each input object for equality. Equal input objects are passed through.
@@ -201,7 +204,7 @@ function Where-PSItem {
 
         # The value against which to compare each input object for precedence. Greater input objects are passed through.
         [Parameter(ParameterSetName='GT', Mandatory)]
-        [Alias('IGT')]
+        [Alias('GIT')]
         [PSObject]
         $GT,
 
@@ -210,13 +213,13 @@ function Where-PSItem {
         [PSObject]
         $CGT,
 
-        # The value against which to compare each input object for postcedence. Lesser input objects are passed through.
+        # The value against which to compare each input object for precedence. Lesser input objects are passed through.
         [Parameter(ParameterSetName='LT', Mandatory)]
         [Alias('ILT')]
         [PSObject]
         $LT,
 
-        # The value against which to compare each input object for case-sensitive postcedence. Case-sensitively lesser input objects are passed through.
+        # The value against which to compare each input object for case-sensitive precedence. Case-sensitively lesser input objects are passed through.
         [Parameter(ParameterSetName='CLT', Mandatory)]
         [PSObject]
         $CLT,
@@ -228,17 +231,17 @@ function Where-PSItem {
         $GE,
 
         # The value against which to compare each input object for case-sensitive precedence or equality. Case-sensitively greater or equal input objects are passed through.
-        [Parameter(ParameterSetName='CGE', Mandatory)]
+        [Parameter(ParameterSetName='CGI', Mandatory)]
         [PSObject]
         $CGE,
 
-        # The value against which to compare each input object for postcedence or equality. Lesser or equal input objects are passed through.
+        # The value against which to compare each input object for precedence or equality. Lesser or equal input objects are passed through.
         [Parameter(ParameterSetName='LE', Mandatory)]
         [Alias('ILE')]
         [PSObject]
         $LE,
 
-        # The value against which to compare each input object for case-sensitive postcedence or equality. Case-sensitively lesser or equal input objects are passed through.
+        # The value against which to compare each input object for case-sensitive precedence or equality. Case-sensitively lesser or equal input objects are passed through.
         [Parameter(ParameterSetName='CLE', Mandatory)]
         [PSObject]
         $CLE,
@@ -298,13 +301,13 @@ function Where-PSItem {
         [PSObject]
         $CContains,
 
-        # The value against which to compare each input object for noncontainment. Noncontaining input objects are passed through.
+        # The value against which to compare each input object for non-containment. Non-containing input objects are passed through.
         [Parameter(ParameterSetName='NotContains', Mandatory)]
         [Alias('INotContains')]
         [PSObject]
         $NotContains,
 
-        # The value against which to compare each input object for case-sensitive noncontainment. Case-sensitively noncontaining input objects are passed through.
+        # The value against which to compare each input object for case-sensitive non-containment. Case-sensitively non-containing input objects are passed through.
         [Parameter(ParameterSetName='CNotContains', Mandatory)]
         [PSObject]
         $CNotContains,

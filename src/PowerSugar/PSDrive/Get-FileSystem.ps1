@@ -5,7 +5,7 @@ function Get-FileSystem {
     .ForwardHelpTargetName Microsoft.PowerShell.Management\Get-PSDrive
     .ForwardHelpCategory Cmdlet
     #>
-    [Alias('gfs')]  # spell-checker:ignore gfs
+    [Alias('fs')]
     [CmdletBinding(DefaultParameterSetName='Name', HelpUri='https://go.microsoft.com/fwlink/?LinkID=2096494')]
     param(
         [Parameter(ParameterSetName='Name', Position=0, ValueFromPipelineByPropertyName=$true)]
@@ -50,7 +50,7 @@ function Get-FileSystem {
             }
 
             $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Microsoft.PowerShell.Management\Get-PSDrive', [CommandTypes]::Cmdlet)
-            $scriptCmd = {& $wrappedCmd @PSBoundParameters }
+            $scriptCmd = {& $wrappedCmd @PSBoundParameters}
 
             $steppablePipeline = $scriptCmd.GetSteppablePipeline($myInvocation.CommandOrigin)
             $steppablePipeline.Begin($PSCmdlet)

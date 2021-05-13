@@ -1,23 +1,21 @@
-function Measure-Object_Average {
+function Measure-StandardDeviation {
     <#
     .Synopsis
-        Measures the average of the input objects.
+        Measures the standard deviation of the input objects.
 
     .Description
-        Measures the average of all input objects--or one or more properties thereof--that are non-null. Null objects and properties are ignored. If there are zero non-null input objects, then nothing is returned.
+        Measures the standard deviation of all input objects--or one or more properties thereof--that are non-null. Null objects and properties are ignored. If there are zero non-null input objects, then the standard deviation is zero.
 
     .Parameter Property
         Specifies one or more numeric properties to measure. If no properties are specified, then either the object itself (if it is numeric) or the Count property of the object (if it is non-numeric), is measured.
 
     .Inputs
         System.Management.Automation.PSObject
-            You can pipe objects to `Measure-Object_Average`.
+            You can pipe objects to `Measure-StandardDeviation`.
 
     .Outputs
         System.Double, Microsoft.PowerShell.Commands.GenericMeasureInfo
-            If more than one property is specified, then the command returns a GenericMeasureInfo object for each property. Otherwise, it returns a double.
-
-            If there are zero non-null input objects, then nothing is returned.
+            If more than one property is specified, then this command returns a GenericMeasureInfo object for each property. Otherwise, it returns a double.
 
     .Notes
         The InputObject parameter should not be invoked directly. Rather, input should piped to this command.
@@ -45,17 +43,15 @@ function Measure-Object_Average {
         try {
             $genericMeasureInfo =
                 if ($PSBoundParameters.ContainsKey('Property')) {
-                    $Input | Measure-Object -Average -Property:$Property
+                    $Input | Measure-Object -StandardDeviation -Property:$Property
                 } else {
-                    $Input | Measure-Object -Average
+                    $Input | Measure-Object -StandardDeviation
                 }
 
-            if ($null -ne $genericMeasureInfo) {
-                if ($Property.Count -gt 1) {
-                    $genericMeasureInfo
-                } else {
-                    $genericMeasureInfo.Average
-                }
+            if ($Property.Count -gt 1) {
+                $genericMeasureInfo
+            } else {
+                $genericMeasureInfo.StandardDeviation
             }
         } catch {
             throw
@@ -63,4 +59,4 @@ function Measure-Object_Average {
     }
 }
 
-Set-Alias -Name 'avg' -Value 'Measure-Object_Average' -ErrorAction SilentlyContinue
+Set-Alias -Name 'stddev' -Value 'Measure-StandardDeviation' -ErrorAction SilentlyContinue

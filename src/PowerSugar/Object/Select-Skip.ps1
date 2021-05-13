@@ -1,4 +1,4 @@
-function Select-Object_Skip {
+function Select-Skip {
     <#
 
     .ForwardHelpTargetName Microsoft.PowerShell.Utility\Select-Object
@@ -52,4 +52,4 @@ function Select-Object_Skip {
     }
 }
 
-Set-Alias -Name 'skip' -Value 'Select-Object_Skip' -ErrorAction SilentlyContinue
+Set-Alias -Name 'skip' -Value 'Select-Skip' -ErrorAction SilentlyContinue

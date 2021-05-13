@@ -1,4 +1,4 @@
-function Measure-Object_Minimum {
+function Measure-Minimum {
     <#
     .Synopsis
         Measures the minimum of the input objects.
@@ -11,7 +11,7 @@ function Measure-Object_Minimum {
 
     .Inputs
         System.Management.Automation.PSObject
-            You can pipe objects to `Measure-Object_Minimum`.
+            You can pipe objects to `Measure-Minimum`.
 
     .Outputs
         System.Double, Microsoft.PowerShell.Commands.GenericMeasureInfo
@@ -63,4 +63,4 @@ function Measure-Object_Minimum {
     }
 }
 
-Set-Alias -Name 'min' -Value 'Measure-Object_Minimum' -ErrorAction SilentlyContinue
+Set-Alias -Name 'min' -Value 'Measure-Minimum' -ErrorAction SilentlyContinue

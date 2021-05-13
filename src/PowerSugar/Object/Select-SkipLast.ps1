@@ -1,5 +1,4 @@
-
-function Select-Object_SkipLast {
+function Select-SkipLast {
     <#
 
     .ForwardHelpTargetName Microsoft.PowerShell.Utility\Select-Object
@@ -54,4 +53,4 @@ function Select-Object_SkipLast {
     }
 }
 
-Set-Alias -Name 'skiplast' -Value 'Select-Object_SkipLast' -ErrorAction SilentlyContinue
+Set-Alias -Name 'skiplast' -Value 'Select-SkipLast' -ErrorAction SilentlyContinue

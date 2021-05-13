@@ -1,4 +1,4 @@
-function Measure-Object_Any {
+function Measure-Any {
     end {
         foreach ($element in $Input) {
             if ($element) {
@@ -9,4 +9,4 @@ function Measure-Object_Any {
     }
 }
 
-Set-Alias -Name 'any' -Value 'Measure-Object_Any' -ErrorAction SilentlyContinue
+Set-Alias -Name 'any' -Value 'Measure-Any' -ErrorAction SilentlyContinue

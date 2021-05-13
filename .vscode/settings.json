@@ -1,6 +1,4 @@
 {
-  "powershell.cwd": "${workspaceFolder}",
-
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -37,7 +35,36 @@
   "files.watcherExclude": {
     "**/target": true
   },
-  "material-icon-theme.folders.associations": {
-    "PowerSugar": "src",
-  },
+
+  "cSpell.words": [
+    "CEQ",
+    "CGE",
+    "CGT",
+    "CLE",
+    "CLT",
+    "CNE",
+    "IEQ",
+    "IGE",
+    "ILE",
+    "ILT",
+    "INE",
+    "fd",
+    "fdt",
+    "fdtu",
+    "fdu",
+    "fnow",
+    "ftoday",
+    "futcnow",
+    "futctoday",
+    "skipindex",
+    "skiplast",
+    "stddev",
+    "utcnow",
+    "utctoday"
+  ],
+
+  "powershell.cwd": "${workspaceFolder}",
+  "[powershell]": {
+    "editor.suggest.showSnippets": false,
+  }
 }

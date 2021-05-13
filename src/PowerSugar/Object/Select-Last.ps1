@@ -1,29 +1,30 @@
-function Select-Object_Index {
+function Select-Last {
     <#
 
     .ForwardHelpTargetName Microsoft.PowerShell.Utility\Select-Object
     .ForwardHelpCategory Cmdlet
 
     #>
-
-    [CmdletBinding(DefaultParameterSetName='IndexParameter', HelpUri='https://go.microsoft.com/fwlink/?LinkID=113387', RemotingCapability='None')]
+    [CmdletBinding(DefaultParameterSetName='DefaultParameter', HelpUri='https://go.microsoft.com/fwlink/?LinkID=113387', RemotingCapability='None')]
     param(
         [Parameter(ValueFromPipeline=$true)]
         [psobject]
         ${InputObject},
 
-        [Parameter(Mandatory, Position=0, ParameterSetName='IndexParameter')]
+        [Parameter(Position=0, ParameterSetName='DefaultParameter')]
         [ValidateRange(0, 2147483647)]
-        [int[]]
-        ${Index},
+        [int]
+        ${Last} = 1,
 
-        [Parameter(ParameterSetName='IndexParameter')]
+        [Parameter(ParameterSetName='DefaultParameter')]
         [switch]
         ${Wait}
     )
 
     begin {
         try {
+            $PSBoundParameters['Last'] = $Last
+
             $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Microsoft.PowerShell.Utility\Select-Object', [System.Management.Automation.CommandTypes]::Cmdlet)
             $scriptCmd = {& $wrappedCmd @PSBoundParameters }
 
@@ -51,4 +52,4 @@ function Select-Object_Index {
     }
 }
 
-Set-Alias -Name 'index' -Value 'Select-Object_Index' -ErrorAction SilentlyContinue
+Set-Alias -Name 'last' -Value 'Select-Last' -ErrorAction SilentlyContinue

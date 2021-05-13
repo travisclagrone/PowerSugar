@@ -1,4 +1,4 @@
-function Measure-Object_Line {
+function Measure-Line {
     <#
     .Synopsis
         Measures the count of lines across all of the input objects.
@@ -13,7 +13,7 @@ function Measure-Object_Line {
 
     .Inputs
         System.Management.Automation.PSObject
-            You can pipe objects to `Measure-Object_Line`.
+            You can pipe objects to `Measure-Line`.
 
     .Outputs
         System.Int32, Microsoft.PowerShell.Commands.TextMeasureInfo
@@ -67,4 +67,4 @@ function Measure-Object_Line {
     }
 }
 
-Set-Alias -Name 'lines' -Value 'Measure-Object_Line' -ErrorAction SilentlyContinue
+Set-Alias -Name 'lines' -Value 'Measure-Line' -ErrorAction SilentlyContinue

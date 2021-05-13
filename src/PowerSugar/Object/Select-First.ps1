@@ -1,29 +1,24 @@
-function Select-Object_SkipIndex {
-    <#
-
-    .ForwardHelpTargetName Microsoft.PowerShell.Utility\Select-Object
-    .ForwardHelpCategory Cmdlet
-
-    #>
-
-    [CmdletBinding(DefaultParameterSetName='IndexParameter', HelpUri='https://go.microsoft.com/fwlink/?LinkID=113387', RemotingCapability='None')]
+function Select-First {
+    [CmdletBinding(DefaultParameterSetName='DefaultParameter', HelpUri='https://go.microsoft.com/fwlink/?LinkID=113387', RemotingCapability='None')]
     param(
         [Parameter(ValueFromPipeline=$true)]
         [psobject]
         ${InputObject},
 
-        [Parameter(Mandatory, Position=0, ParameterSetName='IndexParameter')]
+        [Parameter(Position=0, ParameterSetName='DefaultParameter')]
         [ValidateRange(0, 2147483647)]
-        [int[]]
-        ${SkipIndex},
+        [int]
+        ${First} = 1,
 
-        [Parameter(ParameterSetName='IndexParameter')]
+        [Parameter(ParameterSetName='DefaultParameter')]
         [switch]
         ${Wait}
     )
 
     begin {
         try {
+            $PSBoundParameters['First'] = $First
+
             $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Microsoft.PowerShell.Utility\Select-Object', [System.Management.Automation.CommandTypes]::Cmdlet)
             $scriptCmd = {& $wrappedCmd @PSBoundParameters }
 
@@ -51,4 +46,4 @@ function Select-Object_SkipIndex {
     }
 }
 
-Set-Alias -Name 'skipindex' -Value 'Select-Object_SkipIndex' -ErrorAction SilentlyContinue
+Set-Alias -Name 'first' -Value 'Select-First' -ErrorAction SilentlyContinue

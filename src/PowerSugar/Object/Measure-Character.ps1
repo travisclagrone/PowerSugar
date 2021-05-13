@@ -1,10 +1,10 @@
-function Measure-Object_Word {
+function Measure-Character {
     <#
     .Synopsis
-        Measures the count of words across all of the input objects.
+        Measures the count of characters across all of the input objects.
 
     .Description
-        Measures the count of words across all of the input objects--or one or more properties thereof--that are non-null. Null objects and properties are ignored. If there are zero non-null input objects, then zero is returned.
+        Measures the count of characters across all of the input objects--or one or more properties thereof--that are non-null. Null objects and properties are ignored. If there are zero non-null input objects, then zero is returned.
 
         Intended for convenience aliasing in interactive sessions.
 
@@ -16,7 +16,7 @@ function Measure-Object_Word {
 
     .Inputs
         System.Management.Automation.PSObject
-            You can pipe objects to `Measure-Object_Word`.
+            You can pipe objects to `Measure-Character`.
 
     .Outputs
         System.Int32, Microsoft.PowerShell.Commands.TextMeasureInfo
@@ -65,7 +65,7 @@ function Measure-Object_Word {
                 if ($Property.Count -gt 1) {
                     $textMeasureInfo
                 } else {
-                    $textMeasureInfo.Words
+                    $textMeasureInfo.Characters
                 }
             }
         } catch {
@@ -74,4 +74,4 @@ function Measure-Object_Word {
     }
 }
 
-Set-Alias -Name 'words' -Value 'Measure-Object_Word' -ErrorAction SilentlyContinue
+Set-Alias -Name 'chars' -Value 'Measure-Character' -ErrorAction SilentlyContinue

@@ -1,36 +1,36 @@
-$sources = @(
-    'DateTime/Get-Now.ps1'
-    'DateTime/Get-Timestamp.ps1'
-    'DateTime/Get-Today.ps1'
-
+$Sources = @(
+    'Date/Get-FileDate.ps1'
+    'Date/Get-FileDateTime.ps1'
+    'Date/Get-FileDateTimeUniversal.ps1'
+    'Date/Get-FileDateUniversal.ps1'
+    'DateTime/Get-LocalDate.ps1'
+    'DateTime/Get-LocalDateTime.ps1'
+    'DateTime/Get-UniversalDate.ps1'
+    'DateTime/Get-UniversalDateTime.ps1'
     'Help/Get-HelpFile.ps1'
-
     'Member/Get-MemberType.ps1'
-
-    'Object/Measure-Object_All.ps1'
-    'Object/Measure-Object_AllStats.ps1'
-    'Object/Measure-Object_Any.ps1'
-    'Object/Measure-Object_Average.ps1'
-    'Object/Measure-Object_Character.ps1'
-    'Object/Measure-Object_Count.ps1'
-    'Object/Measure-Object_Line.ps1'
-    'Object/Measure-Object_Maximum.ps1'
-    'Object/Measure-Object_Minimum.ps1'
-    'Object/Measure-Object_StandardDeviation.ps1'
-    'Object/Measure-Object_Sum.ps1'
-    'Object/Measure-Object_Word.ps1'
-    'Object/Select-Object_First.ps1'
-    'Object/Select-Object_Index.ps1'
-    'Object/Select-Object_Last.ps1'
-    'Object/Select-Object_Skip.ps1'
-    'Object/Select-Object_SkipIndex.ps1'
-    'Object/Select-Object_SkipLast.ps1'
-
+    'Object/Measure-All.ps1'
+    'Object/Measure-AllStats.ps1'
+    'Object/Measure-Any.ps1'
+    'Object/Measure-Average.ps1'
+    'Object/Measure-Character.ps1'
+    'Object/Measure-Count.ps1'
+    'Object/Measure-Line.ps1'
+    'Object/Measure-Maximum.ps1'
+    'Object/Measure-Minimum.ps1'
+    'Object/Measure-StandardDeviation.ps1'
+    'Object/Measure-Sum.ps1'
+    'Object/Measure-Word.ps1'
+    'Object/Select-First.ps1'
+    'Object/Select-Index.ps1'
+    'Object/Select-Last.ps1'
+    'Object/Select-Skip.ps1'
+    'Object/Select-SkipIndex.ps1'
+    'Object/Select-SkipLast.ps1'
+    'Object/Where-PSItem.ps1'
     'PSDrive/Get-FileSystem.ps1'
-
-    'PSItem/Where-PSItem.ps1'
 )
 
-foreach ($path in $sources) {
-    . (Join-Path $PSScriptRoot $path)
+foreach ($source in $Sources) {
+    . (Join-Path $PSScriptRoot $source)
 }

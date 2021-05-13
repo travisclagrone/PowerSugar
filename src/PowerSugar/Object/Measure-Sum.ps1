@@ -1,23 +1,21 @@
-function Measure-Object_Maximum {
+function Measure-Sum {
     <#
     .Synopsis
-        Measures the maximum of the input objects.
+        Measures the sum of the input objects.
 
     .Description
-        Measures the maximum of all input objects--or one or more properties thereof--that are non-null. Null objects and properties are ignored. If there are zero non-null input objects, then nothing is returned.
+        Measures the sum of all input objects--or one or more properties thereof--that are non-null. Null objects and properties are ignored. If there are zero non-null input objects, then the sum is zero.
 
     .Parameter Property
         Specifies one or more numeric properties to measure. If no properties are specified, then either the object itself (if it is numeric) or the Count property of the object (if it is non-numeric), is measured.
 
     .Inputs
         System.Management.Automation.PSObject
-            You can pipe objects to `Measure-Object_Maximum`.
+            You can pipe objects to `Measure-Sum`.
 
     .Outputs
         System.Double, Microsoft.PowerShell.Commands.GenericMeasureInfo
             If more than one property is specified, then the command returns a GenericMeasureInfo object for each property. Otherwise, it returns a double.
-
-            If there are zero non-null input objects, then nothing is returned.
 
     .Notes
         The InputObject parameter should not be invoked directly. Rather, input should piped to this command.
@@ -45,17 +43,15 @@ function Measure-Object_Maximum {
         try {
             $genericMeasureInfo =
                 if ($PSBoundParameters.ContainsKey('Property')) {
-                    $Input | Measure-Object -Maximum -Property:$Property
+                    $Input | Measure-Object -Sum -Property:$Property
                 } else {
-                    $Input | Measure-Object -Maximum
+                    $Input | Measure-Object -Sum
                 }
 
-            if ($null -ne $genericMeasureInfo) {
-                if ($Property.Count -gt 1) {
-                    $genericMeasureInfo
-                } else {
-                    $genericMeasureInfo.Maximum
-                }
+            if ($Property.Count -gt 1) {
+                $genericMeasureInfo
+            } else {
+                $genericMeasureInfo.Sum
             }
         } catch {
             throw
@@ -63,4 +59,4 @@ function Measure-Object_Maximum {
     }
 }
 
-Set-Alias -Name 'max' -Value 'Measure-Object_Maximum' -ErrorAction SilentlyContinue
+Set-Alias -Name 'sum' -Value 'Measure-Sum' -ErrorAction SilentlyContinue

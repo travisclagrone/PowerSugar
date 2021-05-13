@@ -3,7 +3,7 @@ function Get-MemberType {
     [CmdletBinding(PositionalBinding=$false)]
     param(
         [Parameter(ValueFromPipeline=$true)]
-        [psobject]
+        [PSObject]
         ${InputObject},
 
         [Parameter(Position=0)]

@@ -70,31 +70,47 @@ NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
-    'Get-FileSystem'
+    # Date
+    'Get-FileDate'
+    'Get-FileDateTime'
+    'Get-FileDateUniversal'
+    'Get-FileDateTimeUniversal'
+
+    # DateTime
+    'Get-LocalDate'
+    'Get-LocalDateTime'
+    'Get-UniversalDate'
+    'Get-UniversalDateTime'
+
+    # Help
     'Get-HelpFile'
-    'Get-Now'
-    'Get-Timestamp'
-    'Get-Today'
+
+    # Member
     'Get-MemberType'
-    'Measure-Object_All'
-    'Measure-Object_AllStats'
-    'Measure-Object_Any'
-    'Measure-Object_Average'
-    'Measure-Object_Character'
-    'Measure-Object_Count'
-    'Measure-Object_Line'
-    'Measure-Object_Maximum'
-    'Measure-Object_Minimum'
-    'Measure-Object_StandardDeviation'
-    'Measure-Object_Sum'
-    'Measure-Object_Word'
-    'Select-Object_First'
-    'Select-Object_Index'
-    'Select-Object_Last'
-    'Select-Object_Skip'
-    'Select-Object_SkipIndex'
-    'Select-Object_SkipLast'
+
+    # Object
+    'Measure-All'
+    'Measure-AllStats'
+    'Measure-Any'
+    'Measure-Average'
+    'Measure-Character'
+    'Measure-Count'
+    'Measure-Line'
+    'Measure-Maximum'
+    'Measure-Minimum'
+    'Measure-StandardDeviation'
+    'Measure-Sum'
+    'Measure-Word'
+    'Select-First'
+    'Select-Index'
+    'Select-Last'
+    'Select-Skip'
+    'Select-SkipIndex'
+    'Select-SkipLast'
     'Where-PSItem'
+
+    # PSDrive
+    'Get-FileSystem'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -105,30 +121,46 @@ CmdletsToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
 AliasesToExport = @(
+    # Date
+    'fnow'
+    'ftoday'
+    'futcnow'
+    'futctoday'
+
+    # DateTime
+    'now'
+    'today'
+    'utcnow'
+    'utctoday'
+
+    # Help
     'about'
+
+    # Member
+    'gmt'
+
+    # Object
     'all'
     'any'
     'avg'
     'chars'
     'count'
     'first'
-    'gfs'  # spell-checker:ignore gfs
-    'gmt'
     'index'
     'last'
     'lines'
     'max'
     'min'
-    'now'
     'skip'
-    'skipindex'  # spell-checker:ignore skipindex
-    'skiplast'  # spell-checker:ignore skiplast
+    'skipindex'
+    'skiplast'
     'stats'
-    'stddev'  # spell-checker:ignore stddev
+    'stddev'
     'sum'
-    'timestamp'
-    'today'
     'words'
+
+    # PSDrive
+    'fs'
 )
 
 # DSC resources to export from this module
@@ -141,29 +173,36 @@ AliasesToExport = @(
 FileList = @(
     'PowerSugar.psd1'
     'PowerSugar.psm1'
-    'DateTime/Get-Now.ps1'
-    'DateTime/Get-Timestamp.ps1'
-    'DateTime/Get-Today.ps1'
+    'Date/Get-FileDate.ps1'
+    'Date/Get-FileDateTime.ps1'
+    'Date/Get-FileDateUniversal.ps1'
+    'Date/Get-FileDateTimeUniversal.ps1'
+    'DateTime/Get-LocalDate.ps1'
+    'DateTime/Get-LocalDateTime.ps1'
+    'DateTime/Get-UniversalDate.ps1'
+    'DateTime/Get-UniversalDateTime.ps1'
+    'Help/Get-HelpFile.ps1'
     'Member/Get-MemberType.ps1'
-    'Object/Measure-Object_All.ps1'
-    'Object/Measure-Object_AllStats.ps1'
-    'Object/Measure-Object_Any.ps1'
-    'Object/Measure-Object_Average.ps1'
-    'Object/Measure-Object_Character.ps1'
-    'Object/Measure-Object_Count.ps1'
-    'Object/Measure-Object_Line.ps1'
-    'Object/Measure-Object_Maximum.ps1'
-    'Object/Measure-Object_Minimum.ps1'
-    'Object/Measure-Object_StandardDeviation.ps1'
-    'Object/Measure-Object_Sum.ps1'
-    'Object/Measure-Object_Word.ps1'
-    'Object/Select-Object_First.ps1'
-    'Object/Select-Object_Index.ps1'
-    'Object/Select-Object_Last.ps1'
-    'Object/Select-Object_Skip.ps1'
-    'Object/Select-Object_SkipIndex.ps1'
-    'Object/Select-Object_SkipLast.ps1'
-    'PSItem/Where-PSItem.ps1'
+    'Object/Measure-All.ps1'
+    'Object/Measure-AllStats.ps1'
+    'Object/Measure-Any.ps1'
+    'Object/Measure-Average.ps1'
+    'Object/Measure-Character.ps1'
+    'Object/Measure-Count.ps1'
+    'Object/Measure-Line.ps1'
+    'Object/Measure-Maximum.ps1'
+    'Object/Measure-Minimum.ps1'
+    'Object/Measure-StandardDeviation.ps1'
+    'Object/Measure-Sum.ps1'
+    'Object/Measure-Word.ps1'
+    'Object/Select-First.ps1'
+    'Object/Select-Index.ps1'
+    'Object/Select-Last.ps1'
+    'Object/Select-Skip.ps1'
+    'Object/Select-SkipIndex.ps1'
+    'Object/Select-SkipLast.ps1'
+    'Object/Where-PSItem.ps1'
+    'PSDrive/Get-FileSystem.ps1'
     'TimeSpan/TimeSpan.Types.ps1xml'
 )
 

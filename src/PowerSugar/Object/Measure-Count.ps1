@@ -1,4 +1,4 @@
-function Measure-Object_Count {
+function Measure-Count {
     <#
     .Synopsis
         Measures the count of the input objects.
@@ -11,7 +11,7 @@ function Measure-Object_Count {
 
     .Inputs
         System.Management.Automation.PSObject
-            You can pipe objects to `Measure-Object_Count`.
+            You can pipe objects to `Measure-Count`.
 
     .Outputs
         System.Int32, Microsoft.PowerShell.Commands.GenericMeasureInfo
@@ -59,4 +59,4 @@ function Measure-Object_Count {
     }
 }
 
-Set-Alias -Name 'count' -Value 'Measure-Object_Count' -ErrorAction SilentlyContinue
+Set-Alias -Name 'count' -Value 'Measure-Count' -ErrorAction SilentlyContinue

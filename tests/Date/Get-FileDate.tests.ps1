@@ -1,7 +1,7 @@
 #Requires -Module Pester
 
 BeforeAll {
-    Import-Module 'PowerSugar'
+    Import-Module 'PowerSugar' -DisableNameChecking -ErrorAction Stop
 }
 
 Describe 'Get-FileDate' {
@@ -29,5 +29,5 @@ Describe 'Get-FileDate' {
 }
 
 AfterAll {
-    Remove-Module 'PowerSugar'
+    Get-Module 'PowerSugar' -ErrorAction SilentlyContinue | Remove-Module
 }

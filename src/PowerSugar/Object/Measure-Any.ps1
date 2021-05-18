@@ -9,4 +9,5 @@ function Measure-Any {
     }
 }
 
-Set-Alias -Name 'any' -Value 'Measure-Any' -ErrorAction SilentlyContinue
+# Alias name is "?any" instead of "any" in order to avoid overshadowing other modules' internal functions.
+Set-Alias -Name '?any' -Value 'Measure-Any' -ErrorAction SilentlyContinue

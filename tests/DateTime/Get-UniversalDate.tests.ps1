@@ -24,6 +24,7 @@ Describe 'Get-UniversalDate' {
 
             $UniversalDate | Should -BeGreaterOrEqual $UniversalDateBefore
             $UniversalDate | Should -BeLessOrEqual $UniversalDateAfter
+            $UniversalDate.TimeOfDay | Should -Be ([TimeSpan]::Zero) -Because 'a "date" should not have a time component'
         }
     }
 }

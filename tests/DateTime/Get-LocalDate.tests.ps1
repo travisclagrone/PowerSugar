@@ -24,6 +24,7 @@ Describe 'Get-LocalDate' {
 
             $LocalDate | Should -BeGreaterOrEqual $LocalDateBefore
             $LocalDate | Should -BeLessOrEqual $LocalDateAfter
+            $LocalDate.TimeOfDay | Should -Be ([TimeSpan]::Zero) -Because 'a "date" should not have a time component'
         }
     }
 }

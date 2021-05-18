@@ -22,8 +22,8 @@ Describe 'Get-LocalDateTime' {
             $LocalDateTime = now
             $LocalDateTimeAfter = [DateTime]::Now
 
-            $LocalDateTime | Should -BeGreaterThan $LocalDateTimeBefore
-            $LocalDateTime | Should -BeLessThan $LocalDateTimeAfter
+            $LocalDateTime | Should -BeGreaterOrEqual $LocalDateTimeBefore
+            $LocalDateTime | Should -BeLessOrEqual $LocalDateTimeAfter
         }
     }
 }

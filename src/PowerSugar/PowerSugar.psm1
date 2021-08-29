@@ -1,4 +1,5 @@
 $Sources = @(
+    'Collections/Invoke-Enumerator.ps1'
     'Date/Get-FileDate.ps1'
     'Date/Get-FileDateTime.ps1'
     'Date/Get-FileDateTimeUniversal.ps1'

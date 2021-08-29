@@ -12,7 +12,7 @@
 RootModule = 'PowerSugar.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.7'
+ModuleVersion = '0.0.8'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -70,6 +70,9 @@ NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
+    # Collections
+    'Invoke-Enumerator'
+
     # Date
     'Get-FileDate'
     'Get-FileDateTime'
@@ -121,6 +124,9 @@ CmdletsToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
 AliasesToExport = @(
+    # Collections
+    'enumerate'
+
     # Date
     'fnow'
     'ftoday'
@@ -173,6 +179,7 @@ AliasesToExport = @(
 FileList = @(
     'PowerSugar.psd1'
     'PowerSugar.psm1'
+    'Collections/Invoke-Enumerator.ps1'
     'Date/Get-FileDate.ps1'
     'Date/Get-FileDateTime.ps1'
     'Date/Get-FileDateUniversal.ps1'
@@ -215,6 +222,7 @@ PrivateData = @{
         Tags = @(
             'about'
             'alias'
+            'Collections'
             'core'
             'DateTime'
             'help'

@@ -1,4 +1,4 @@
-#Requires -Version 7.0.3
+#Requires -Version 7.1
 
 # Build Parameters
 param(
@@ -35,16 +35,27 @@ function Import-ModuleManifest ([string] $Path = $script:ModuleManifest) { Impor
 
 function coalesce { @($input) + $args | Where-Object { $_ } | Select-Object -First 1 }
 
+function ConvertTo-ModuleVersionString ([semver] $SemVer) {
+    [semver]::new($SemVer.Major, $SemVer.Minor, $SemVer.Patch).ToString()
+}
+
+function ConvertTo-PrereleaseString ([semver] $SemVer) {
+    [string] $SemVer.PrereleaseLabel
+}
+
 #endregion
 
 #region Tasks
 
 task Version {
-    $old = ((Import-ModuleManifest)['ModuleVersion'] -as [semver]) ?? [semver]::new(0)
-    $new = switch ($BumpVersion) {
+    $oldVersion = ((Import-ModuleManifest)['ModuleVersion'] -as [semver]) ?? [semver]::new(0)
+    $oldModuleVersion = ConvertTo-ModuleVersionString $oldVersion
+    $oldPrerelease = ConvertTo-PrereleaseString $oldVersion
+
+    $newVersion = switch ($BumpVersion) {
         Major {
             [semver]::new(
-                $old.Major + 1,
+                $oldVersion.Major + 1,
                 0,  # Minor
                 0,  # Patch
                 $script:PrereleaseLabel,
@@ -52,30 +63,36 @@ task Version {
         }
         Minor {
             [semver]::new(
-                $old.Major,
-                $old.Minor + 1,
+                $oldVersion.Major,
+                $oldVersion.Minor + 1,
                 0,  # Patch
                 $script:PrereleaseLabel,
                 $null)  # BuildLabel
         }
         Patch {
             [semver]::new(
-                $old.Major,
-                $old.Minor,
-                $old.Patch + 1,
+                $oldVersion.Major,
+                $oldVersion.Minor,
+                $oldVersion.Patch + 1,
                 $script:PrereleaseLabel,
                 $null)  # BuildLabel
         }
         default {
             [semver]::new(
-                $old.Major,
-                $old.Minor,
-                $old.Patch,
-                (coalesce $script:PrereleaseLabel $old.PrereleaseLabel),
-                $script:BuildLabel ? ($script:PrereleaseLabel -eq ([string] $old.PrereleaseLabel)) : $null)
+                $oldVersion.Major,
+                $oldVersion.Minor,
+                $oldVersion.Patch,
+                (coalesce $script:PrereleaseLabel $oldVersion.PrereleaseLabel),
+                ($script:PrereleaseLabel -eq ([string] $oldVersion.PrereleaseLabel)) ? $script:BuildLabel : $null)
         }
     }
-    Update-ModuleManifest -Path $ModuleManifest -ModuleVersion $new
+    $newModuleVersion = ConvertTo-ModuleVersionString $newVersion
+    $newPrerelease = ConvertTo-PrereleaseString $newVersion
+
+    $content = Get-Content -LiteralPath $ModuleManifest -Raw
+    $content = $content.Replace("ModuleVersion = '$oldModuleVersion'", "ModuleVersion = '$newModuleVersion'")
+    $content = $content.Replace("Prerelease = '$oldPrerelease'", "Prerelease = '$newPrerelease'")
+    Set-Content -LiteralPath $ModuleManifest -Value $content
 }
 
 task NormalizeNewlines {
@@ -93,5 +110,7 @@ task Build Version, NormalizeNewlines
 task Publish Build, {
     Publish-Module -Path $script:ModuleRoot -NuGetApiKey $script:NuGetApiKey
 }
+
+task . Build
 
 #endregion

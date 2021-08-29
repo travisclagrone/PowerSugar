@@ -12,7 +12,7 @@
 RootModule = 'PowerSugar.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.9'
+ModuleVersion = '0.0.10'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -85,6 +85,9 @@ FunctionsToExport = @(
     'Get-UniversalDate'
     'Get-UniversalDateTime'
 
+    # Function
+    'Invoke-IteratedFunction'
+
     # Help
     'Get-HelpFile'
 
@@ -142,6 +145,9 @@ AliasesToExport = @(
     'utcnow'
     'utctoday'
 
+    # Function
+    'iterate'
+
     # Help
     'about'
 
@@ -194,6 +200,7 @@ FileList = @(
     'DateTime/Get-LocalDateTime.ps1'
     'DateTime/Get-UniversalDate.ps1'
     'DateTime/Get-UniversalDateTime.ps1'
+    'Function/Invoke-IteratedFunction.ps1'
     'Help/Get-HelpFile.ps1'
     'Member/Get-MemberType.ps1'
     'Object/Measure-All.ps1'
@@ -232,8 +239,10 @@ PrivateData = @{
             'Collections'
             'core'
             'DateTime'
+            'function'
             'help'
             'HelpFile'
+            'iterate'
             'object'
             'proxy'
             'PSItem'

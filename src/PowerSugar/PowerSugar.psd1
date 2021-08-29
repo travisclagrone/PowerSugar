@@ -114,6 +114,9 @@ FunctionsToExport = @(
 
     # PSDrive
     'Get-FileSystem'
+
+    # String
+    'Resolve-String'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -167,6 +170,9 @@ AliasesToExport = @(
 
     # PSDrive
     'fs'
+
+    # String
+    'expand'
 )
 
 # DSC resources to export from this module
@@ -210,6 +216,7 @@ FileList = @(
     'Object/Select-SkipLast.ps1'
     'Object/Where-PSItem.ps1'
     'PSDrive/Get-FileSystem.ps1'
+    'String/Resolve-String.ps1'
     'TimeSpan/TimeSpan.Types.ps1xml'
 )
 
@@ -230,6 +237,7 @@ PrivateData = @{
             'object'
             'proxy'
             'PSItem'
+            'string'
             'sugar'
             'TimeSpan'
             'wrapper'

@@ -8,6 +8,7 @@ $Sources = @(
     'DateTime/Get-LocalDateTime.ps1'
     'DateTime/Get-UniversalDate.ps1'
     'DateTime/Get-UniversalDateTime.ps1'
+    'Environment/Environment.ps1'
     'Function/Invoke-IteratedFunction.ps1'
     'Help/Get-HelpFile.ps1'
     'Member/Get-MemberType.ps1'

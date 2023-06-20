@@ -3,7 +3,7 @@
 param(
     [Parameter(Mandatory)]
     [Alias('key')]
-    [SecureString]
+    [string]
     $NuGetApiKey,
 
     [Alias('root')]
@@ -14,4 +14,4 @@ param(
 
 Publish-Module `
     -Path $(Join-Path $RepoRoot 'src' 'PowerSugar') `
-    -NuGetApiKey $(ConvertFrom-SecureString -AsPlainText $NuGetApiKey)
+    -NuGetApiKey $NuGetApiKey

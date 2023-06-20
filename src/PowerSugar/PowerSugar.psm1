@@ -30,6 +30,7 @@ $Sources = @(
     'Object/Select-SkipIndex.ps1'
     'Object/Select-SkipLast.ps1'
     'Object/Where-PSItem.ps1'
+    'Path/Path.ps1'
     'PSDrive/Get-FileSystem.ps1'
     'String/Resolve-String.ps1'
 )

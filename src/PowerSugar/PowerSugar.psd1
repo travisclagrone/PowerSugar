@@ -126,7 +126,13 @@ FunctionsToExport = @(
 CmdletsToExport = @()
 
 # Variables to export from this module
-# VariablesToExport = @()
+VariablesToExport = @(
+    # Path
+    'AltDirSep'
+    'DirSep'
+    'PathSep'
+    'VolSep'
+)
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
 AliasesToExport = @(
@@ -224,6 +230,7 @@ FileList = @(
     'Object/Select-SkipIndex.ps1'
     'Object/Select-SkipLast.ps1'
     'Object/Where-PSItem.ps1'
+    'Path/Path.ps1'
     'PSDrive/Get-FileSystem.ps1'
     'String/Resolve-String.ps1'
     'TimeSpan/TimeSpan.Types.ps1xml'
@@ -246,6 +253,7 @@ PrivateData = @{
             'HelpFile'
             'iterate'
             'object'
+            'path'
             'proxy'
             'PSItem'
             'string'
